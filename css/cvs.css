@@ -1,0 +1,32 @@
+
+cv, ident, formations, formation, experiences, experience, diplomes, diplome{
+	display:block;
+	border:1px solid black;
+	margin-bottom:10px;
+	padding:5px;
+}
+diplome[obtenu="true"]:after{
+	content:'obtenu';
+	color:skyblue;
+}
+diplome[obtenu="false"]:after{
+	content:'Non obtenu';
+	color:red;
+}
+prenom{
+	color:blue;
+}
+
+
+experiences:before,formations:before{
+	color:skyblue;
+	font-size:24pt;
+	font-weight:900;
+}
+
+formations:before{
+	content:'Formations :'
+}
+experiences:before{
+	content:'Experiences :'
+}
