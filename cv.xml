@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE cvs SYSTEM "cvsgen.dtd">
 <cvs>
-<cv id="C239">
+	<cv id="C239">
 		<ident>
 			<nom>DESORBAIX</nom>
 			<prenom>Alexandre</prenom>
@@ -107,7 +107,6 @@
 			</experience>
 		</experiences>
 	</cv>
-		
 	<cv id="C234">
 		<ident>
 			<nom>DESORBAIX</nom>
