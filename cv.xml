@@ -1,54 +1,219 @@
-<?xml version="1.0" encoding="utf-8"?>
-<cv id="234">
-	<ident>
-		<nom>DESORBAIX</nom>
-		<prenom>Alexandre</prenom>
-		<prenom>Dominique</prenom>
-		<prenom>JoÃ«l</prenom>
-		<datenaiss>1984-08-03</datenaiss>
-		<langues>
-			<langue langName="FR" matern="true"/>
-			<langue langName="EN" matern="false"/>
-		</langues>
-		<permis>AB</permis>
-	</ident>
-	<formations>
-		<formation>
-			<debut>2000</debut>
-			<fin>2008</fin>
-			<intitule>Ecole privÃ©e EVRY(91)</intitule>
-			<diplomes>
-				<diplome obtenu="true">
-					<intitule opt="dev">BTS IG</intitule>
-				</diplome>
-				<diplome obtenu="true">
-					<intitule>Licence assistant Chef de projet</intitule>
-				</diplome>
-				<diplome obtenu="false">
-					<intitule>Master Chef de projet</intitule>
-				</diplome>
-			</diplomes>
-		</formation>
-		<formation>
-			<debut>2009</debut>
-			<fin>2010</fin>
-			<intitule>Fac de versailles (78)</intitule>
-			<diplomes>
-				<diplome obtenu="true">
-					<intitule>Doctorat Informatique</intitule>
-				</diplome>
-			</diplomes>
-		</formation>
-	</formations>
-	<experiences>
-		<experience>
-			<debut>2009</debut>
-			<intitule>Formateur Orsys</intitule>
-		</experience>
-		<experience>
-			<debut>2009</debut>
-			<fin>2012</fin>
-			<intitule>Consultant pour Ste privÃ©e</intitule>
-		</experience>
-	</experiences>
-</cv>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE cvs SYSTEM "cvsgen.dtd">
+<cvs>
+<cv id="C239">
+		<ident>
+			<nom>DESORBAIX</nom>
+			<prenom>Alexandre</prenom>
+			<prenom>Dominique</prenom>
+			<prenom>Joël</prenom>
+			<datenaiss>1984-08-03</datenaiss>
+			<langues>
+				<langue langName="FR" matern="true"/>
+				<langue langName="EN" matern="false"/>
+			</langues>
+			<permis>AB</permis>
+		</ident>
+		<formations>
+			<formation>
+				<debut>2000</debut>
+				<fin>2008</fin>
+				<intitule>Ecole privée EVRY(91)</intitule>
+				<diplomes>
+					<diplome obtenu="true">
+						<intitule opt="dev">BTS IG</intitule>
+					</diplome>
+					<diplome obtenu="true">
+						<intitule>Licence assistant Chef de projet</intitule>
+					</diplome>
+					<diplome obtenu="false">
+						<intitule>Master Chef de projet</intitule>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<debut>2009</debut>
+				<fin>2010</fin>
+				<intitule>Fac de versailles (78)</intitule>
+				<diplomes>
+					<diplome obtenu="true">
+						<intitule>Doctorat Informatique</intitule>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+		<experiences>
+			<experience>
+				<debut>2009</debut>
+				<intitule>Formateur Orsys</intitule>
+			</experience>
+			<experience>
+				<debut>2009</debut>
+				<fin>2012</fin>
+				<intitule>Consultant pour Ste privée</intitule>
+			</experience>
+		</experiences>
+	</cv>
+	<cv id="C245">
+		<ident>
+			<nom>DESORBAIX</nom>
+			<prenom>Alexandre</prenom>
+			<prenom>Dominique</prenom>
+			<prenom>Joël</prenom>
+			<datenaiss>1984-08-03</datenaiss>
+			<langues>
+				<langue langName="FR" matern="true"/>
+				<langue langName="EN" matern="false"/>
+			</langues>
+			<permis>AB</permis>
+		</ident>
+		<formations>
+			<formation>
+				<debut>2000</debut>
+				<fin>2008</fin>
+				<intitule>Ecole privée EVRY(91)</intitule>
+				<diplomes>
+					<diplome obtenu="true">
+						<intitule opt="dev">BTS IG</intitule>
+					</diplome>
+					<diplome obtenu="true">
+						<intitule>Licence assistant Chef de projet</intitule>
+					</diplome>
+					<diplome obtenu="false">
+						<intitule>Master Chef de projet</intitule>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<debut>2009</debut>
+				<fin>2010</fin>
+				<intitule>Fac de versailles (78)</intitule>
+				<diplomes>
+					<diplome obtenu="true">
+						<intitule>Doctorat Informatique</intitule>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+		<experiences>
+			<experience>
+				<debut>2009</debut>
+				<intitule>Formateur Orsys</intitule>
+			</experience>
+			<experience>
+				<debut>2009</debut>
+				<fin>2012</fin>
+				<intitule>Consultant pour Ste privée</intitule>
+			</experience>
+		</experiences>
+	</cv>
+		
+	<cv id="C234">
+		<ident>
+			<nom>DESORBAIX</nom>
+			<prenom>Alexandre</prenom>
+			<prenom>Dominique</prenom>
+			<prenom>Joël</prenom>
+			<datenaiss>1984-08-03</datenaiss>
+			<langues>
+				<langue langName="FR" matern="true"/>
+				<langue langName="EN" matern="false"/>
+			</langues>
+			<permis>AB</permis>
+		</ident>
+		<formations>
+			<formation>
+				<debut>2000</debut>
+				<fin>2008</fin>
+				<intitule>Ecole privée EVRY(91)</intitule>
+				<diplomes>
+					<diplome obtenu="true">
+						<intitule opt="dev">BTS IG</intitule>
+					</diplome>
+					<diplome obtenu="true">
+						<intitule>Licence assistant Chef de projet</intitule>
+					</diplome>
+					<diplome obtenu="false">
+						<intitule>Master Chef de projet</intitule>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<debut>2009</debut>
+				<fin>2010</fin>
+				<intitule>Fac de versailles (78)</intitule>
+				<diplomes>
+					<diplome obtenu="true">
+						<intitule>Doctorat Informatique</intitule>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+		<experiences>
+			<experience>
+				<debut>2009</debut>
+				<intitule>Formateur Orsys</intitule>
+			</experience>
+			<experience>
+				<debut>2009</debut>
+				<fin>2012</fin>
+				<intitule>Consultant pour Ste privée</intitule>
+			</experience>
+		</experiences>
+	</cv>
+	<cv id="C235">
+		<ident>
+			<nom>DESORBAIX</nom>
+			<prenom>Alexandre</prenom>
+			<prenom>Dominique</prenom>
+			<prenom>Joël</prenom>
+			<datenaiss>1984-08-03</datenaiss>
+			<langues>
+				<langue langName="FR" matern="true"/>
+				<langue langName="EN" matern="false"/>
+			</langues>
+			<permis>AB</permis>
+		</ident>
+		<formations>
+			<formation>
+				<debut>2000</debut>
+				<fin>2008</fin>
+				<intitule>Ecole privée EVRY(91)</intitule>
+				<diplomes>
+					<diplome obtenu="true">
+						<intitule opt="dev">BTS IG</intitule>
+					</diplome>
+					<diplome obtenu="true">
+						<intitule>Licence assistant Chef de projet</intitule>
+					</diplome>
+					<diplome obtenu="false">
+						<intitule>Master Chef de projet</intitule>
+					</diplome>
+				</diplomes>
+			</formation>
+			<formation>
+				<debut>2009</debut>
+				<fin>2010</fin>
+				<intitule>Fac de versailles (78)</intitule>
+				<diplomes>
+					<diplome obtenu="true">
+						<intitule>Doctorat Informatique</intitule>
+					</diplome>
+				</diplomes>
+			</formation>
+		</formations>
+		<experiences>
+			<experience>
+				<debut>2009</debut>
+				<intitule>Formateur Orsys</intitule>
+			</experience>
+			<experience>
+				<debut>2009</debut>
+				<fin>2012</fin>
+				<intitule>Consultant pour Ste privée</intitule>
+			</experience>
+		</experiences>
+	</cv>
+	<best-cv id="C234"/>
+	<best-of-cv ids="C234 C239"/>
+</cvs>
