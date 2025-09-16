@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<sst xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" count="12" uniqueCount="12">
+    <si>
+        <t xml:space="preserve">Factures editées le : </t>
+    </si>
+    <si>
+        <t xml:space="preserve">Nombre de factures : </t>
+    </si>
+    <si>
+        <t>Montant des factures :</t>
+    </si>
+    <si>
+        <t xml:space="preserve">Nombre de devis : </t>
+    </si>
+    <si>
+        <t>n°facture</t>
+    </si>
+    <si>
+        <t>Date</t>
+    </si>
+    <si>
+        <t>idclient</t>
+    </si>
+    <si>
+        <t>nbLignes</t>
+    </si>
+    <si>
+        <t>montant moyen de ligne</t>
+    </si>
+    <si>
+        <t>type</t>
+    </si>
+    <si>
+        <t>Facture</t>
+    </si>
+    <si>
+        <t>Montant total fichier :</t>
+    </si>
+</sst>
