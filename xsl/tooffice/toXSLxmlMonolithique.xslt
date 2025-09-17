@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
 	<xsl:output method="xml" version="1.0" encoding="UTF-8"/>
 	<xsl:template match="/">
 		<xsl:processing-instruction name="mso-application">progid="Excel.Sheet"</xsl:processing-instruction>
@@ -144,7 +144,7 @@
 				</Style>
 			</Styles>
 			<Worksheet ss:Name="Analyse factures3">
-				<Table ss:ExpandedColumnCount="9" ss:ExpandedRowCount="8" x:FullColumns="1" x:FullRows="1" ss:DefaultColumnWidth="61.8" ss:DefaultRowHeight="15">
+				<Table ss:ExpandedColumnCount="9" ss:ExpandedRowCount="{8 + count(//facture)-1}" x:FullColumns="1" x:FullRows="1" ss:DefaultColumnWidth="61.8" ss:DefaultRowHeight="15">
 					<Column ss:AutoFitWidth="0" ss:Width="24.6"/>
 					<Column ss:AutoFitWidth="0" ss:Width="68.399999999999991"/>
 					<Column ss:AutoFitWidth="0" ss:Width="124.80000000000001"/>
@@ -163,7 +163,9 @@
 							<Data ss:Type="String">Nombre de factures : </Data>
 						</Cell>
 						<Cell ss:StyleID="s59">
-							<Data ss:Type="Number"><xsl:value-of select="count(//facture[contains(@type,'acture')])"/></Data>
+							<Data ss:Type="Number">
+								<xsl:value-of select="count(//facture[contains(@type,'acture')])"/>
+							</Data>
 						</Cell>
 					</Row>
 					<Row ss:AutoFitHeight="0" ss:Height="15.75">
@@ -171,14 +173,18 @@
 							<Data ss:Type="String">Montant des factures :</Data>
 						</Cell>
 						<Cell ss:StyleID="s60">
-							<Data ss:Type="Number"><xsl:value-of select="sum(//facture[contains(@type,'acture')]//stotligne)"/></Data>
+							<Data ss:Type="Number">
+								<xsl:value-of select="sum(//facture[contains(@type,'acture')]//stotligne)"/>
+							</Data>
 						</Cell>
 						<Cell ss:StyleID="s61"/>
 						<Cell ss:MergeAcross="1" ss:StyleID="s82">
 							<Data ss:Type="String">Nombre de devis : </Data>
 						</Cell>
 						<Cell ss:StyleID="s62">
-							<Data ss:Type="Number"><xsl:value-of select="count(//facture[contains(@type,'evis')])"/></Data>
+							<Data ss:Type="Number">
+								<xsl:value-of select="count(//facture[contains(@type,'evis')])"/>
+							</Data>
 						</Cell>
 					</Row>
 					<Row ss:AutoFitHeight="0" ss:Height="15.75">
@@ -205,34 +211,19 @@
 							<Data ss:Type="String">type</Data>
 						</Cell>
 					</Row>
-					<Row ss:AutoFitHeight="0" ss:Height="18.75">
-						<Cell ss:Index="2" ss:StyleID="s63">
-							<Data ss:Type="Number">0</Data>
-						</Cell>
-						<Cell ss:StyleID="s66">
-							<Data ss:Type="DateTime">2000-01-01T00:00:00.000</Data>
-						</Cell>
-						<Cell>
-							<Data ss:Type="Number">999999</Data>
-						</Cell>
-						<Cell>
-							<Data ss:Type="Number">789</Data>
-						</Cell>
-						<Cell ss:MergeAcross="1" ss:StyleID="s78">
-							<Data ss:Type="Number">25.58</Data>
-						</Cell>
-						<Cell ss:StyleID="s64">
-							<Data ss:Type="String">Facture</Data>
-						</Cell>
-					</Row>
+					<!--debut des lignes / facture-->
+					<xsl:apply-templates select="//facture"/>
+					<!--fin des lignes / facture-->
 					<Row ss:AutoFitHeight="0" ss:Height="18.75">
 						<Cell ss:Index="2" ss:StyleID="s63"/>
 						<Cell ss:StyleID="s66"/>
 						<Cell ss:MergeAcross="1" ss:StyleID="s77">
 							<Data ss:Type="String">Montant total fichier :</Data>
 						</Cell>
-						<Cell ss:MergeAcross="1" ss:StyleID="s78" ss:Formula="=SUM(R[-1]C:R[-1]C)">
-							<Data ss:Type="Number">25.58</Data>
+						<Cell ss:MergeAcross="1" ss:StyleID="s78" ss:Formula="=SUM(R[-1]C:R[-{count(//facture)}]C)">
+							<Data ss:Type="Number">
+								<xsl:value-of select="sum(//facture//stotligne)"/>
+							</Data>
 						</Cell>
 						<Cell ss:StyleID="s64"/>
 					</Row>
@@ -272,5 +263,28 @@
 				</WorksheetOptions>
 			</Worksheet>
 		</Workbook>
+	</xsl:template>
+	<xsl:template match="facture">
+		<xsl:comment>debut de ligne / facture</xsl:comment>
+		<Row ss:AutoFitHeight="0" ss:Height="18.75">
+			<Cell ss:Index="2" ss:StyleID="s63">
+				<Data ss:Type="Number"><xsl:value-of select="@numfacture"/></Data>
+			</Cell>
+			<Cell ss:StyleID="s66">
+				<Data ss:Type="DateTime"><xsl:value-of select="@datefacture"/>T00:00:00.000</Data>
+			</Cell>
+			<Cell>
+				<Data ss:Type="Number"><xsl:value-of select="@idclient"/></Data>
+			</Cell>
+			<Cell>
+				<Data ss:Type="Number"><xsl:value-of select="count(.//ligne)"/></Data>
+			</Cell>
+			<Cell ss:MergeAcross="1" ss:StyleID="s78">
+				<Data ss:Type="Number"><xsl:value-of select="sum(.//stotligne)"/></Data>
+			</Cell>
+			<Cell ss:StyleID="s64">
+				<Data ss:Type="String"><xsl:value-of select="@type"/></Data>
+			</Cell>
+		</Row>
 	</xsl:template>
 </xsl:stylesheet>
