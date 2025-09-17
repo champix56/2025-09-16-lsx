@@ -9,10 +9,10 @@
 	<xsl:template match="facture">
 		<facture>
 			<prixAvgArticle>
-				<xsl:value-of select="sum(.//phtByUnit) div count(.//phtByUnit)"/>
+				<xsl:value-of select="format-number(sum(.//phtByUnit) div count(.//phtByUnit),'0.00')"/>
 			</prixAvgArticle>
 			<ligneAvg>
-				<xsl:value-of select="sum(.//stotligne) div count(.//stotligne)"/>
+				<xsl:value-of select="format-number(sum(.//stotligne) div count(.//stotligne),'0.00')"/>
 			</ligneAvg>
 			<nbLignes>
 				<xsl:value-of select="count(.//ligne)"/>
