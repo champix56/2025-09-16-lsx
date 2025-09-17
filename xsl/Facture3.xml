@@ -8,7 +8,7 @@
 			<cp>54230</cp>
 			<ville>Nancy Lest</ville>
 		</client>
-		<lignes>
+		<lignes>	
 			<ligne>
 				<ref>REF-2134</ref>
 				<designation>Lavage SOL </designation>
@@ -44,7 +44,7 @@
 			</ligne>
 		</lignes>
 	</facture>
-	<facture numfacture="11" refdevis="08" datefacture="2012-07-05" type="Facture" idclient="234">
+	<facture numfacture="11" refdevis="08" datefacture="2012-07-05" type="facture" idclient="234">
 		<lignes>
 			<ligne>
 				<ref>REF-2234</ref>
@@ -94,5 +94,4 @@
 			</ligne>
 		</lignes>
 	</facture>
-
 </factures>
