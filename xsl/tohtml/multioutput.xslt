@@ -108,21 +108,7 @@
 				</thead>
 				<tbody>
 					<xsl:apply-templates select=".//ligne"/>
-					<tr>
-						<th colspan="3">&nbsp;</th>
-						<td class="bold">Montant total HT</td>
-						<td class="bold">00.00€</td>
-					</tr>
-					<tr>
-						<th colspan="3">&#160;</th>
-						<td class="bold">Montant TVA</td>
-						<td class="bold">00.00€</td>
-					</tr>
-					<tr>
-						<th colspan="3">&#160;</th>
-						<td class="bold">Montant Total TTC</td>
-						<td class="bold">00.00€</td>
-					</tr>
+					<xsl:call-template name="totaux"/>
 				</tbody>
 			</table>
 		</div>
@@ -167,5 +153,27 @@ selection generique de tous les enfants
 		<td>
 			<xsl:value-of select="."/>
 		</td>
+	</xsl:template>
+	<xsl:template name="totaux">
+		<xsl:param name="factureNode" select="."/>
+		<xsl:variable name="ht" select="xs:float(fn:format-number(fn:sum($factureNode//stotligne),'0.00'))"/>
+		<xsl:variable name="tva" select="xs:float(fn:format-number($ht*0.25,'0.00'))" />
+		<tr>
+			<th colspan="3">&nbsp;</th>
+			<td class="bold">Montant total HT</td>
+			<td class="bold">
+				<xsl:value-of select="fn:format-number($ht,'0.00€')"/>
+			</td>
+		</tr>
+		<tr>
+			<th colspan="3">&#160;</th>
+			<td class="bold">Montant TVA</td>
+			<td class="bold"><xsl:value-of select="fn:format-number($tva,'0.00€')"/></td>
+		</tr>
+		<tr>
+			<th colspan="3">&#160;</th>
+			<td class="bold">Montant Total TTC</td>
+			<td class="bold"><xsl:value-of select="fn:format-number($ht+$tva,'0.00€')"/></td>
+		</tr>
 	</xsl:template>
 </xsl:stylesheet>
