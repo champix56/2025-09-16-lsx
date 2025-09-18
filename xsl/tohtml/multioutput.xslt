@@ -55,7 +55,27 @@
 							<xsl:apply-templates select="//facture" mode="sommaire"/>
 						</ul>
 						<hr/>
+						<div><h2>Stats</h2>
+							<table>
+								<tbody>
+								<tr>
+									<th colspan="5">Devis</th>
+								</tr>
+									<xsl:call-template name="totaux">
+										<xsl:with-param name="factureNode" select="//facture[fn:contains(@type,'evis')]"/>
+									</xsl:call-template>
+									<tr>
+									<th colspan="5">facture</th>
+								</tr>
+									<xsl:call-template name="totaux">
+										<xsl:with-param name="factureNode" select="//facture[fn:contains(@type,'acture')]"/>
+									</xsl:call-template>
+								</tbody>
+							</table>
+						</div>
 					</div>
+					<hr/>
+					<hr/>
 					<xsl:apply-templates select="//facture"/>
 				</body>
 			</html>
