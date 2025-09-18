@@ -1,0 +1,17 @@
+D:\xml\OOXMLXSLTTransform\OOXMLXSLTTransform\bin\Debug\OOXMLXSLTTransform.exe
+D:\xml\OOXMLXSLTTransform\OOXMLXSLTTransform\bin\Debug\OOXMLXSLTTransform.pdb
+D:\xml\OOXMLXSLTTransform\OOXMLXSLTTransform\bin\Debug\DocumentFormat.OpenXml.dll
+D:\xml\OOXMLXSLTTransform\OOXMLXSLTTransform\obj\Debug\OOXMLXSLTTransform.csprojResolveAssemblyReference.cache
+D:\xml\OOXMLXSLTTransform\OOXMLXSLTTransform\obj\Debug\OOXMLXSLTTransform.exe
+D:\xml\OOXMLXSLTTransform\OOXMLXSLTTransform\obj\Debug\OOXMLXSLTTransform.pdb
+D:\partage\xml, pxm, lsx\OOXMLXSLTTransform\OOXMLXSLTTransform\bin\Debug\OOXMLXSLTTransform.exe
+D:\partage\xml, pxm, lsx\OOXMLXSLTTransform\OOXMLXSLTTransform\bin\Debug\OOXMLXSLTTransform.pdb
+D:\partage\xml, pxm, lsx\OOXMLXSLTTransform\OOXMLXSLTTransform\bin\Debug\DocumentFormat.OpenXml.dll
+D:\partage\xml, pxm, lsx\OOXMLXSLTTransform\OOXMLXSLTTransform\obj\Debug\OOXMLXSLTTransform.csprojAssemblyReference.cache
+D:\partage\xml, pxm, lsx\OOXMLXSLTTransform\OOXMLXSLTTransform\obj\Debug\OOXMLXSLTTransform.csproj.CoreCompileInputs.cache
+D:\partage\xml, pxm, lsx\OOXMLXSLTTransform\OOXMLXSLTTransform\obj\Debug\OOXMLXSLTTransform.csproj.CopyComplete
+D:\partage\xml, pxm, lsx\OOXMLXSLTTransform\OOXMLXSLTTransform\obj\Debug\OOXMLXSLTTransform.exe
+D:\partage\xml, pxm, lsx\OOXMLXSLTTransform\OOXMLXSLTTransform\obj\Debug\OOXMLXSLTTransform.pdb
+D:\partage\xml, pxm, lsx\OOXMLXSLTTransform\OOXMLXSLTTransform\bin\Debug\SampleFiles\hl7.xml
+D:\partage\xml, pxm, lsx\OOXMLXSLTTransform\OOXMLXSLTTransform\bin\Debug\SampleFiles\transform.xslt
+D:\partage\xml, pxm, lsx\OOXMLXSLTTransform\OOXMLXSLTTransform\bin\Debug\SampleFiles\template.docx

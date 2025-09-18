@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factures>
+	<facture>
+		<prixAvgArticle>8.28</prixAvgArticle>
+		<ligneAvg>0,14</ligneAvg>
+		<nbLignes>3</nbLignes>
+	</facture>
+	<facture>
+		<prixAvgArticle>9.95</prixAvgArticle>
+		<ligneAvg>0,75</ligneAvg>
+		<nbLignes>1</nbLignes>
+	</facture>
+	<facture>
+		<prixAvgArticle>9.95</prixAvgArticle>
+		<ligneAvg>0,25</ligneAvg>
+		<nbLignes>1</nbLignes>
+	</facture>
+	<facture>
+		<prixAvgArticle>9.95</prixAvgArticle>
+		<ligneAvg>0,70</ligneAvg>
+		<nbLignes>1</nbLignes>
+	</facture>
+	<facture>
+		<prixAvgArticle>7.62</prixAvgArticle>
+		<ligneAvg>0,33</ligneAvg>
+		<nbLignes>3</nbLignes>
+	</facture>
+</factures>
