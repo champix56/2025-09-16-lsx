@@ -5,7 +5,8 @@
 	<!ENTITY siret "215415205465102010"> 
 ]>
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
-	<xsl:import href="all-libs.xslt" />	
+	<xsl:import href="all-libs.xslt"/>
+	<xsl:variable name="docClient" select="fn:document('clients.xml')/clients"/>
 	<xsl:template match="/">
 		<xsl:result-document href="style/style.css" method="text" encoding="utf-8">
 			.facture{
@@ -28,7 +29,7 @@
 					<link rel="stylesheet" href="style/style.css" type="text/css"/>
 				</head>
 				<body>
-				<!--<div><xsl:apply-templates select="/factures"/></div>-->
+					<!--<div><xsl:apply-templates select="/factures"/></div>-->
 					<div id="TOC">
 						<h1>Liste des factures édités le <xsl:value-of select="/factures/@dateeditionXML"/></h1>
 						<ul>
@@ -41,11 +42,32 @@
 			</html>
 		</xsl:result-document>
 	</xsl:template>
+	<xsl:template match="clients/client">
+		<xsl:value-of select="destinataire"/>
+		<br/>
+		<xsl:value-of select="adr1"/>
+		<br/>
+		<xsl:if test="string-length(adr2)">
+			<xsl:value-of select="adr2"/>
+			<br/>
+		</xsl:if>
+		<xsl:value-of select="cp"/>
+		<xsl:text> </xsl:text>
+		<xsl:value-of select="ville"/>
+	</xsl:template>
 	<xsl:template name="bloc-destinataire">
 		<xsl:param name="node" select="."/>
-		<div class="destinataire">id client:<xsl:value-of select="$node/@idclient" /></div>
+		<div class="destinataire">
+			<!--id client:<xsl:value-of select="$node/@idclient" /><br/>-->
+			<!--
+				usage a la volée
+			<xsl:variable name="docClient" select="fn:document('clients.xml')/clients/client[@id=$node/@idclient]"/>
+			<xsl:value-of select="$docClient/destinataire"/>
+			-->
+			<xsl:apply-templates select="$docClient/client[@id=$node/@idclient]"/>
+		</div>
 	</xsl:template>
-<!--	<xsl:template match="factures">
+	<!--	<xsl:template match="factures">
 		<xsl:call-template name="bloc-destinataire">
 			<xsl:with-param name="node" select="//facture[1]"/>
 		</xsl:call-template>
