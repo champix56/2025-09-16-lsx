@@ -5,6 +5,7 @@
 	<!ENTITY siret "215415205465102010"> 
 ]>
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+	<xsl:import href="all-libs.xslt" />	
 	<xsl:template match="/">
 		<xsl:result-document href="style/style.css" method="text" encoding="utf-8">
 			.facture{
@@ -27,6 +28,7 @@
 					<link rel="stylesheet" href="style/style.css" type="text/css"/>
 				</head>
 				<body>
+				<!--<div><xsl:apply-templates select="/factures"/></div>-->
 					<div id="TOC">
 						<h1>Liste des factures édités le <xsl:value-of select="/factures/@dateeditionXML"/></h1>
 						<ul>
@@ -39,15 +41,19 @@
 			</html>
 		</xsl:result-document>
 	</xsl:template>
-	<xsl:template match="facture" mode="sommaire">
-		<li>
-			<a href="#F{@numfacture}">Facture N°<xsl:value-of select="@numfacture"/></a>
-		</li>
+	<xsl:template name="bloc-destinataire">
+		<xsl:param name="node" select="."/>
+		<div class="destinataire">id client:<xsl:value-of select="$node/@idclient" /></div>
 	</xsl:template>
+<!--	<xsl:template match="factures">
+		<xsl:call-template name="bloc-destinataire">
+			<xsl:with-param name="node" select="//facture[1]"/>
+		</xsl:call-template>
+	</xsl:template>-->
 	<xsl:template match="facture">
 		<div class="facture" id="F{@numfacture}">
 			<xsl:call-template name="bloc-expediteur"/>
-			<div class="destinataire">destinataire</div>
+			<xsl:call-template name="bloc-destinataire"/>
 			<div class="numerofacture">numero facture</div>
 			<table border="1" cellpadding="0" cellspacing="0">
 				<thead>
@@ -97,20 +103,28 @@
 	</xsl:template>
 	<xsl:template match="ligne">
 		<tr>
-			<!--<xsl:apply-templates select="*"/>-->
-			<xsl:apply-templates select="ref"/>
+			<!--
+selection generique de tous les enfants
+-->
+			<xsl:apply-templates select="*"/>
+			<!--
+			selection arbitraire des noeuds
+<xsl:apply-templates select="ref"/>
 			<xsl:apply-templates select="designation"/>
 			<xsl:apply-templates select="nbUnit"/>
 			<xsl:apply-templates select="phtByUnit"/>
-			<xsl:apply-templates select="stotligne"/>	
+			<xsl:apply-templates select="stotligne"/>	-->
 		</tr>
 	</xsl:template>
 	<xsl:template match="phtByUnit|stotligne" priority="1.5">
-		<td><xsl:value-of select="fn:format-number(.,'0.00€')"/></td>
+		<td>
+			<xsl:value-of select="fn:format-number(.,'0.00€')"/>
+		</td>
 	</xsl:template>
 	<xsl:template match="surface" priority="2"/>
 	<xsl:template match="ligne/*">
-		<td><xsl:value-of select="."/></td>
+		<td>
+			<xsl:value-of select="."/>
+		</td>
 	</xsl:template>
-	
 </xsl:stylesheet>
