@@ -3,6 +3,9 @@
 	<xsl:attribute-set name="bold">
 		<xsl:attribute name="font-weight">900</xsl:attribute>
 	</xsl:attribute-set>
+	<xsl:attribute-set name="thin">
+		<xsl:attribute name="font-weight">100</xsl:attribute>
+	</xsl:attribute-set>
 	<xsl:attribute-set name="center">
 		<xsl:attribute name="text-align">center</xsl:attribute>
 	</xsl:attribute-set>

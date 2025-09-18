@@ -13,7 +13,7 @@
 			</fo:layout-master-set>
 			<fo:page-sequence master-reference="A4Portrait">
 				<fo:flow flow-name="xsl-region-body">
-					<fo:block>
+					<fo:block  xsl:use-attribute-sets="center bold thin">
 						DEMAT <xsl:value-of select="$signature"/>
 					</fo:block>
 				</fo:flow>
