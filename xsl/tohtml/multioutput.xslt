@@ -40,11 +40,13 @@
 		</xsl:result-document>
 	</xsl:template>
 	<xsl:template match="facture" mode="sommaire">
-		<li><a href="#F{@numfacture}">Facture N°<xsl:value-of select="@numfacture"/></a></li>
+		<li>
+			<a href="#F{@numfacture}">Facture N°<xsl:value-of select="@numfacture"/></a>
+		</li>
 	</xsl:template>
 	<xsl:template match="facture">
 		<div class="facture" id="F{@numfacture}">
-			<div class="expediteur">expediteur</div>
+			<xsl:call-template name="bloc-expediteur"/>
 			<div class="destinataire">destinataire</div>
 			<div class="numerofacture">numero facture</div>
 			<table border="1" cellpadding="0" cellspacing="0">
@@ -78,6 +80,18 @@
 					</tr>
 				</tbody>
 			</table>
+		</div>
+	</xsl:template>
+	<xsl:template name="bloc-expediteur">
+		<div class="expediteur">
+			<xsl:value-of select="/factures/@rsets"/><br/>
+			<xsl:value-of select="/factures/@adr1ets"/><br/>
+			<xsl:if test="fn:string-length(/factures/@adr2ets) &gt;= 1">
+				<xsl:value-of select="/factures/@adr2ets"/><br/>
+			</xsl:if>
+			<xsl:value-of select="/factures/@cpets"/>
+			<xsl:text> </xsl:text>
+			<xsl:value-of select="/factures/@villeets"/>
 		</div>
 	</xsl:template>
 </xsl:stylesheet>
