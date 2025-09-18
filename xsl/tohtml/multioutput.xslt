@@ -14,12 +14,31 @@
 				height:287cm;
 				width:20cm;
 			}
-			.destinataire{}
-			.expediteur{}
-			.numfacture{}
-			table{}
-			thead{}
-			td.bold{}
+			.expediteur{
+				height:4.5cm
+			}
+			.destinataire{
+				height:4.5cm;
+				margin-left:12cm;
+			}
+			.numerofacture{
+				margin-top:1.5cm;
+				margin-bottom:1cm;
+				text-align:center;
+				border:1px solid black;
+				background-color:lightgrey;
+				margin-left:10%;
+				margin-right:10%;
+			}
+			table{
+				width:90%;
+				margin-left:5%;
+				margin-right:5%
+			}
+			thead{
+				background-color:#ACACAC;
+			}
+			td.bold{ font-weight:900;}
 			.footer{}
 		</xsl:result-document>
 		<xsl:result-document href="index.html" method="html" encoding="utf-8">
