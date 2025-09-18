@@ -60,9 +60,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>cell1</td>
-					</tr>
+					<xsl:apply-templates select=".//ligne"/>
 					<tr>
 						<th colspan="3">&nbsp;</th>
 						<td class="bold">Montant total HT</td>
@@ -84,14 +82,35 @@
 	</xsl:template>
 	<xsl:template name="bloc-expediteur">
 		<div class="expediteur">
-			<xsl:value-of select="/factures/@rsets"/><br/>
-			<xsl:value-of select="/factures/@adr1ets"/><br/>
+			<xsl:value-of select="/factures/@rsets"/>
+			<br/>
+			<xsl:value-of select="/factures/@adr1ets"/>
+			<br/>
 			<xsl:if test="fn:string-length(/factures/@adr2ets) &gt;= 1">
-				<xsl:value-of select="/factures/@adr2ets"/><br/>
+				<xsl:value-of select="/factures/@adr2ets"/>
+				<br/>
 			</xsl:if>
 			<xsl:value-of select="/factures/@cpets"/>
 			<xsl:text> </xsl:text>
 			<xsl:value-of select="/factures/@villeets"/>
 		</div>
 	</xsl:template>
+	<xsl:template match="ligne">
+		<tr>
+			<!--<xsl:apply-templates select="*"/>-->
+			<xsl:apply-templates select="ref"/>
+			<xsl:apply-templates select="designation"/>
+			<xsl:apply-templates select="nbUnit"/>
+			<xsl:apply-templates select="phtByUnit"/>
+			<xsl:apply-templates select="stotligne"/>	
+		</tr>
+	</xsl:template>
+	<xsl:template match="phtByUnit|stotligne" priority="1.5">
+		<td><xsl:value-of select="fn:format-number(.,'0.00€')"/></td>
+	</xsl:template>
+	<xsl:template match="surface" priority="2"/>
+	<xsl:template match="ligne/*">
+		<td><xsl:value-of select="."/></td>
+	</xsl:template>
+	
 </xsl:stylesheet>
