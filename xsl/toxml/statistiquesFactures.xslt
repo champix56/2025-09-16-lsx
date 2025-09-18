@@ -12,7 +12,7 @@
 				<xsl:value-of select="format-number(sum(.//phtByUnit) div count(.//phtByUnit),'0.00')"/>
 			</prixAvgArticle>
 			<ligneAvg>
-				<xsl:value-of select="format-number(sum(.//stotligne) div count(.//stotligne),'0.00')"/>
+				<xsl:value-of select="format-number(sum(.//stotligne) div count(.//stotligne),'0,00')"/>
 			</ligneAvg>
 			<nbLignes>
 				<xsl:value-of select="count(.//ligne)"/>
