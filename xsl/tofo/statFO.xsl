@@ -16,7 +16,7 @@
 			<!--def. des formats de papier-->
 			<fo:layout-master-set>
 				<fo:simple-page-master master-name="A4Portrait" page-height="210mm" page-width="297mm">
-					<fo:region-body margin-top="2cm" margin-left="2cm"/>
+					<fo:region-body margin-top="2cm" margin-left="2cm" column-count="2"/>
 					<fo:region-before extent="2cm"/>
 					<fo:region-after extent="1cm"/>
 					<fo:region-start extent="2cm"/>
